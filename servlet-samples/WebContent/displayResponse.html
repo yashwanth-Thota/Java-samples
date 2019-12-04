@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Servlet Response Using AJAX</title>
+</head>
+<body>
+	<div >
+		Attribute to Consumer:<input type="text" id='attr'/><br/>
+		<button onclick='sendRequest()'>submit</button>
+	</div>
+	
+	<div>
+		<h4>Response</h4>
+		<p id='response'></p>
+	</div>
+</body>
+<script>
+	function sendRequest(){
+		var xhttp = new XMLHttpRequest();
+		var ele=document.getElementById('attr');
+		xhttp.onreadystatechange = getResponse;
+		xhttp.open("GET", "/Servlet-samples/staticResponse?attr="+ele.value, true);
+		xhttp.send();
+	}
+	function getResponse(){
+		if (this.readyState == 4 && this.status == 200) {
+		      document.getElementById("response").innerHTML = this.responseText;
+		}
+	}
+</script>
+</html>

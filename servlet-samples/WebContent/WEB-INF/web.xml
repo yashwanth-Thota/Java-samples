@@ -1,0 +1,33 @@
+<web-app>
+	<servlet>
+		<servlet-name>requestConsumer</servlet-name>
+		<servlet-class>com.yashwanth.servlets.AttributeConsumer</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>contextConsumer</servlet-name>
+		<servlet-class>com.yashwanth.servlets.AttributeConsumerWithContext</servlet-class>
+	</servlet><servlet>
+		<servlet-name>staticResponse</servlet-name>
+		<servlet-class>com.yashwanth.servlets.StaticResponse</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>factory</servlet-name>
+		<servlet-class>com.yashwanth.servlets.AttributeProvider</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>factory</servlet-name>
+		<url-pattern>/factory</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>requestConsumer</servlet-name>
+		<url-pattern>/requestConsumer</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>contextConsumer</servlet-name>
+		<url-pattern>/contextConsumer</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>staticResponse</servlet-name>
+		<url-pattern>/staticResponse</url-pattern>
+	</servlet-mapping>
+</web-app>
